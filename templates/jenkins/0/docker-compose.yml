@@ -7,24 +7,18 @@ services:
   jenkins-primary:
     image: jenkinsci/jenkins
     entrypoint:
-    - /usr/share/jenkins/rancher/jenkins.sh
+      - /usr/share/jenkins/rancher/jenkins.sh
     volumes_from:
-    - jenkins-plugins
-    - jenkins-datavolume
+      - jenkins-plugins
+    volumes:
+      - jenkins-data:/var/jenkins_home
     ports:
-    - 8000:8080/tcp
+      - 8000:8080/tcp
     labels:
       io.rancher.sidekicks: jenkins-plugins,jenkins-datavolume
       io.rancher.container.hostname_override: container_name
 
-  jenkins-datavolume:
-    image: busybox
-    entrypoint:
-    - chown
-    - -R
-    - 1000:1000
-    - /var/jenkins_home
-    volumes:
-    - /var/lib/docker/jenkins-ci:/var/jenkins_home
-    labels:
-      io.rancher.container.start_once: 'true'
+volumes:
+  jenkins-data:
+    driver: rancher-nfs
+    external: true
