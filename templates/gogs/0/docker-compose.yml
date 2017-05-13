@@ -7,7 +7,7 @@ services:
           - ${http_port}:3000
           - ${ssh_port}:22
       volumes:
-          - gogs-git-data-volume:/data
+          - gogs-git-data:/data
       links:
           - mysql:db
 
