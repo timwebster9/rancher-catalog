@@ -12,7 +12,7 @@ services:
       io.rancher.container.pull_image: always
 
 volumes:
-  nexus:
+  nexus-nfs-volume:
     driver: rancher-nfs
 
 
