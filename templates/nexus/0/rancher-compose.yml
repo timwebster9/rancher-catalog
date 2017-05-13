@@ -1,0 +1,5 @@
+.catalog:
+  name: Nexus OSS
+  version: latest
+  description: |
+    Repository Manager
