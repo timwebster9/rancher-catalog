@@ -7,7 +7,7 @@ services:
           - ${http_port}:3000
           - ${ssh_port}:22
       volumes:
-          - gogs-nfs-git-volume:/data
+          - gogs-git-data-volume:/data
       links:
           - mysql:db
 
@@ -16,14 +16,14 @@ services:
       ports:
           - ${public_port}:3306
       volumes:
-          - gogs-nfs-volume:/var/lib/mysql
+          - gogs-mysql-data:/var/lib/mysql
       environment:
           MYSQL_ROOT_PASSWORD: ${mysql_password}
 
 volumes:
-  gogs-nfs-volume:
+  gogs-git-data:
     driver: rancher-nfs
     external: true
-  gogs-nfs-git-volume:
+  gogs-mysql-data:
     driver: rancher-nfs
     external: true

@@ -9,7 +9,7 @@
       description: "public port to access the mysql server"
       label: "Public Port"
       required: true
-      default: "3306"
+      default: "3307"
       type: "int"
     - variable: http_port
       description: "http port to access gogs webui"
