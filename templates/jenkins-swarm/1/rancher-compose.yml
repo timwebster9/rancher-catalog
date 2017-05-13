@@ -8,12 +8,9 @@
       label: "User to run swarm process"
       description: |
         If using the Host Docker, this needs to be root.
-      default: jenkins
+      default: "root"
       required: true
-      type: enum
-      options:
-        - jenkins
-        - root
+      type: "string"
     - variable: jenkins_user
       label: "Jenkins username"
       type: "string"
