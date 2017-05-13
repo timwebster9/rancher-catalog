@@ -1,0 +1,5 @@
+name: Jenkins
+description: |
+  Jenkins CI server
+version: latest
+category: Continuous Integration

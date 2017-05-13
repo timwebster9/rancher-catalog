@@ -1,0 +1,7 @@
+name: Nexus OSS
+description: |
+  Repository Manager
+version: latest
+category: Repository
+maintainer: Tim Webster <tim.webster@gmail.com>
+
