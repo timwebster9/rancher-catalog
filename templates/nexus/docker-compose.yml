@@ -7,7 +7,7 @@ services:
      - "7071:8081"
      - "18079:18079"
     volumes:
-    - nexus:/nexus-data
+    - nexus-nfs-volume:/nexus-data
     labels:
       io.rancher.container.pull_image: always
 
