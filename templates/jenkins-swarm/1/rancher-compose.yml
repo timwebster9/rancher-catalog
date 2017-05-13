@@ -14,12 +14,14 @@
     - variable: jenkins_user
       label: "Jenkins username"
       type: "string"
+      default: "jenkins"
       required: false
       description: |
         Username to authenticate to a secured Jenkins host with.
     - variable: jenkins_pass
       label: "Jenkins password"
       type: "string"
+      default: "jenkins"
       required: false
       description: |
         Password to authenticate to a secured Jenkins host with.
