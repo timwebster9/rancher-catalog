@@ -48,5 +48,5 @@ postgres:
         - postgres-data
 
 volumes:
-  sonarqube-nfs-volume:
+  postgres-data:
     driver: rancher-nfs
