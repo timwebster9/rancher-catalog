@@ -1,0 +1,5 @@
+name: Jenkins Swarm Plugin
+description: |
+  Swarm plugin to create dynamic builders
+version: "0.1"
+category: Continuous Integration
