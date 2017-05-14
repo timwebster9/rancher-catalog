@@ -14,5 +14,6 @@ services:
 volumes:
   nexus-nfs-volume:
     driver: rancher-nfs
+    external: true
 
 
