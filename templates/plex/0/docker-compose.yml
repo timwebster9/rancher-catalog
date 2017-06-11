@@ -18,7 +18,7 @@ services:
     environment:
       - TZ=Europe/London
       - PLEX_CLAIM=${claim_token}
-      - ADVERTISE_IP=http://<${host_ip}:32400/
+      - ADVERTISE_IP=http://${host_ip}:32400/
     hostname: ${host_name}
     volumes:
       - ${plex_config}:/config
