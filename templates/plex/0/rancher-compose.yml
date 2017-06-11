@@ -8,13 +8,13 @@
       label: "Path to configuration directory"
       description: |
         Location of Plex configuration database.
-      default: "/var/lib/plexmediaserver"
+      default: "/media/seagate/plex/config"
       required: true
       type: "string"
     - variable: media_dir
       label: "Path to media directory"
       type: "string"
-      default: "/media/seagate/plex_media"
+      default: "/media/seagate/plex/media"
       required: false
       description: |
         Location of media files.
