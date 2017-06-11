@@ -1,0 +1,7 @@
+name: Plex Media Server
+description: |
+  Media Server
+version: latest
+category: Entertainment
+maintainer: Tim Webster <tim.webster@gmail.com>
+

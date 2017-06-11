@@ -1,0 +1,41 @@
+.catalog:
+  name: plex
+  version: latest
+  description: |
+    Media Server
+  questions:
+    - variable: config_dir
+      label: "Path to configuration directory"
+      description: |
+        Location of Plex configuration database.
+      default: "/var/lib/plexmediaserver"
+      required: true
+      type: "string"
+    - variable: media_dir
+      label: "Path to media directory"
+      type: "string"
+      default: "/media/seagate/plex_media"
+      required: false
+      description: |
+        Location of media files.
+    - variable: host_ip
+      label: "Host IP address"
+      type: "string"
+      default: "192.168.1.117"
+      required: true
+      description: |
+        IP address of Plex host.
+    - variable: host_name
+      label: "Host Name"
+      type: "string"
+      default: "mars"
+      required: true
+      description: |
+        Hostname of Plex host.
+    - variable: host_port
+      label: "Host Port"
+      type: "string"
+      default: "32400"
+      required: true
+      description: |
+        Port to expose on Plex host.
