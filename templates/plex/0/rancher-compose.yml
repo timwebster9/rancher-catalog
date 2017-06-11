@@ -39,3 +39,14 @@
       required: true
       description: |
         Port to expose on Plex host.
+    - variable: claim_token
+      label: "Claim Token"
+      type: "string"
+      default: ""
+      required: true
+      description: |
+        Server Claim Token
+
+
+
+
