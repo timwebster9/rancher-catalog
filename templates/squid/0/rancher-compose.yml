@@ -8,6 +8,6 @@
       description: "HTTP port to access Squid"
       label: "Squid HTTP Port"
       required: true
-      default: "3128"
+      default: "12080"
       type: "int"
 
