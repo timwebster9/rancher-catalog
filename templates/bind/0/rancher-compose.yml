@@ -1,0 +1,13 @@
+.catalog:
+  name: "Bind9"
+  version: "9"
+  description: "Bind Domain Name Server"
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: webmin_port
+      description: "HTTP port to access Webmin"
+      label: "Webmin HTTP Port"
+      required: true
+      default: "10000"
+      type: "int"
+
