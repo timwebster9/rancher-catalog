@@ -1,6 +1,6 @@
 .catalog:
   name: "Bind9"
-  version: "9"
+  version: "1.0"
   description: "Bind Domain Name Server"
   minimum_rancher_version: v0.51.0
   questions:
