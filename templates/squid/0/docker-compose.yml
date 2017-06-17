@@ -7,6 +7,8 @@ services:
       - ${http_port}:3128
     volumes:
       - squid-data:/data
+    labels:
+      io.rancher.container.pull_image: always
 
 volumes:
   squid-data:
