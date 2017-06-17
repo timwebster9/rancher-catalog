@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  squid:
+    image: timw/squid
+    ports:
+      - ${http_port}:3128
+    volumes:
+      - squid-data:/data
+
+volumes:
+  squid-data:
+    driver: rancher-nfs
+    external: true
