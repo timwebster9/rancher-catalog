@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  gogs:
+    image: gogs/gogs
+    volumes:
+      - gogs-data:/data
+    labels:
+      io.rancher.container.pull_image: always
+
+volumes:
+  gogs-data:
+    driver: rancher-nfs
+    external: true

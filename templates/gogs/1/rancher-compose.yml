@@ -1,0 +1,8 @@
+.catalog:
+  name: "Gogs"
+  version: "latest"
+  description: "A painless self-hosted Git service"
+  uuid: gogs-0
+  minimum_rancher_version: v0.51.0
+
+gogs:
