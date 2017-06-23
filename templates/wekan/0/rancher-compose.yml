@@ -1,0 +1,14 @@
+.catalog:
+  name: "Wekan"
+  version: "v1.0"
+  description: "A self-hosted Kanban Board"
+  uuid: wekan-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: root_url
+      description: "Wekan URL"
+      label: "Wekan URL"
+      required: true
+      default: "http://localhost"
+      type: "string"
+

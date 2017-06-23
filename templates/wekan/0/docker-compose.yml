@@ -1,0 +1,23 @@
+version: '2'
+services:
+  wekan:
+    image: wekanteam/wekan
+    environment:
+      - MONGO_URL=mongodb://wekandb/wekan
+      - ROOT_URL=${root_url}
+    depends_on:
+      - wekandb
+
+  wekandb:
+    image: mongo:3.2.13
+    volumes:
+      - wekan-data:/data/db
+      - wekan-dump:/dump
+
+volumes:
+  wekan-data:
+    driver: rancher-nfs
+    external: true
+  wekan-dump:
+    driver: rancher-nfs
+    external: true
