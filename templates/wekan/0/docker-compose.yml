@@ -2,6 +2,8 @@ version: '2'
 services:
   wekan:
     image: wekanteam/wekan
+    ports:
+      - "9010:80"
     environment:
       - MONGO_URL=mongodb://wekandb/wekan
       - ROOT_URL=${root_url}
