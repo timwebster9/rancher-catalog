@@ -11,12 +11,6 @@
       required: true
       default: "9000"
       type: "int"
-    - variable: postgress_port
-      description: "Port for Postgres"
-      label: "Postgres Port"
-      required: true
-      default: "5432"
-      type: "int"
     - variable: postgres_data
       description: "Postgres Data Folder"
       label: "Postgres Data"

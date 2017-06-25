@@ -24,8 +24,6 @@ services:
 
   postgres:
       image: postgres:latest
-      ports:
-          - ${postgress_port}:5432
       environment:
           PGDATA: ${postgres_data}
           POSTGRES_DB: ${postgres_db}
