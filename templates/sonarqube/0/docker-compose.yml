@@ -10,7 +10,7 @@ services:
           - /opt/sonarqube/extensions/plugins
 
   sonarqube:
-      image: mars:5000/timw/sonarqube
+      image: localhost:5000/timw/sonarqube
       ports:
           - ${http_port}:9000
       links:
