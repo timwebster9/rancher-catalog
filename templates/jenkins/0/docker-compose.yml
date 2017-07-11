@@ -5,7 +5,7 @@ services:
     image: rancher/jenkins-plugins:v0.1.1
 
   jenkins-primary:
-    image: jenkinsci/jenkins
+    image: localhost:5000/timw/jenkins
     entrypoint:
       - /usr/share/jenkins/rancher/jenkins.sh
     volumes_from:
