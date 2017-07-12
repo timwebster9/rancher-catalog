@@ -30,7 +30,7 @@
       ssh-credentials
       ssh-slaves
       swarm
-jenkins-primary:
+jenkins:
   metadata:
     plugins: |
       ${plugins}
