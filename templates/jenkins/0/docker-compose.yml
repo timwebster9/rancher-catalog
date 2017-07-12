@@ -1,22 +1,13 @@
 version: '2'
 
 services:
-  jenkins-plugins:
-    image: rancher/jenkins-plugins:v0.1.1
 
-  jenkins-primary:
+  jenkins:
     image: localhost:5000/timw/jenkins
     entrypoint:
       - /usr/share/jenkins/rancher/jenkins.sh
-    volumes_from:
-      - jenkins-plugins
     volumes:
       - jenkins-data-2:/var/jenkins_home
-    ports:
-      - 8000:8080/tcp
-    labels:
-      io.rancher.sidekicks: jenkins-plugins
-      io.rancher.container.hostname_override: container_name
 
 volumes:
   jenkins-data-2:
