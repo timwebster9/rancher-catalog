@@ -1,13 +1,14 @@
 version: '2'
 
 services:
-
   jenkins:
     image: localhost:5000/timw/jenkins
     entrypoint:
       - /usr/share/jenkins/rancher/jenkins.sh
     volumes:
       - jenkins-data-2:/var/jenkins_home
+    labels:
+      io.rancher.container.hostname_override: container_name
 
 volumes:
   jenkins-data-2:
