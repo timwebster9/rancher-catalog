@@ -1,0 +1,5 @@
+name: Jenkins-Mesos
+description: |
+  Jenkins CI server with Mesos Integration
+version: latest
+category: Continuous Integration

@@ -1,0 +1,8 @@
+.catalog:
+  name: Jenkins-Mesos
+  version: latest
+  description: |
+    Jenkins CI management server with Mesos Integration
+
+
+

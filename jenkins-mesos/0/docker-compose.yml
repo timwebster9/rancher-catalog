@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  jenkins:
+    image: wurstmeister/mesos-jenkins
+    environment:
+      ENVIRONMENT: production
+      PARENT_HOST: mars
+      JAVA_OPTS: '"-Xmx1024m"'
+      LIBPROCESS_PORT: '9400'
+      LIBPROCESS_ADVERTISE_PORT: '9400'
+      LIBPROCESS_ADVERTISE_IP: 192.168.1.117
+      JENKINS_LOG_FILE_THRESHOLD: WARNING
+      JENKINS_LOG_STDOUT_THRESHOLD: WARNING
+      JENKINS_MESOS_AUTOCONF: enabled
+      JENKINS_MESOS_MASTER: '"192.168.1.121:5050"'
+    ports:
+      - 9400:9400/tcp
+      - 8090:8090/tcp
+    volumes:
+      - jenkins-mesos:/var/jenkins_home
+    labels:
+      io.rancher.container.pull_image: always
+
+volumes:
+  jenkins-mesos:
+    driver: rancher-nfs
+    external: true
