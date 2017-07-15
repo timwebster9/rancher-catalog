@@ -10,6 +10,12 @@
     description: "Port for Jenkins slaves to expose on host"
     default: 50001
     required: true
+  - variable: "mesos_host_port"
+    type: "int"
+    label: "Mesos Host Port Number"
+    description: "Port for Mesos to expose on host"
+    default: 9401
+    required: true
   - variable: "plugins"
     type: "multiline"
     label: "List of Plugins"
