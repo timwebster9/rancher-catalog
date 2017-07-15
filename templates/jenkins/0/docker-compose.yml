@@ -3,8 +3,6 @@ version: "2"
 services:
   jenkins:
     image: localhost:5000/timw/jenkins
-    entrypoint:
-      - /usr/share/jenkins/rancher/jenkins.sh
     volumes:
       - jenkins-data:/var/jenkins_home
     environment:

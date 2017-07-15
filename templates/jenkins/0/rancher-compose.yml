@@ -16,27 +16,3 @@
     description: "Port for Mesos to expose on host"
     default: 9401
     required: true
-  - variable: "plugins"
-    type: "multiline"
-    label: "List of Plugins"
-    description: |
-      List of plugins in the format <plugin_name>[:<version>]
-      one entry per line.
-    default: |
-      credentials
-      git
-      git-client
-      github
-      github-api
-      github-oauth
-      greenballs
-      junit
-      plain-credentials
-      scm-api
-      ssh-credentials
-      ssh-slaves
-      swarm
-jenkins:
-  metadata:
-    plugins: |
-      ${plugins}
