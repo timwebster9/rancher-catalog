@@ -11,7 +11,7 @@ services:
       LIBPROCESS_ADVERTISE_IP: 192.168.1.117
       JENKINS_SLAVE_AGENT_PORT: 50000
     ports:
-      - ${jnlp_host_port}:50000
+      - ${jnlp_port}:${jnlp_port}
       - ${mesos_host_port}:9400
     labels:
       io.rancher.container.hostname_override: container_name
