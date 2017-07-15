@@ -13,6 +13,7 @@ services:
       LIBPROCESS_ADVERTISE_IP: 192.168.1.117
     labels:
       io.rancher.container.hostname_override: container_name
+      io.rancher.container.pull_image: always
 
 volumes:
   jenkins-data-2:
