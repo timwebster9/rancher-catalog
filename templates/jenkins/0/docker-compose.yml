@@ -7,7 +7,7 @@ services:
       - jenkins-data:/var/jenkins_home
     environment:
       LIBPROCESS_PORT: 9400
-      LIBPROCESS_ADVERTISE_PORT: 9400
+      LIBPROCESS_ADVERTISE_PORT: ${mesos_host_port}
       LIBPROCESS_ADVERTISE_IP: 192.168.1.117
       JENKINS_SLAVE_AGENT_PORT: 50000
     ports:
