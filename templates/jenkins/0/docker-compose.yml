@@ -7,6 +7,10 @@ services:
       - /usr/share/jenkins/rancher/jenkins.sh
     volumes:
       - jenkins-data-2:/var/jenkins_home
+    environment:
+      LIBPROCESS_PORT: 9400
+      LIBPROCESS_ADVERTISE_PORT: 9400
+      LIBPROCESS_ADVERTISE_IP: 192.168.1.117
     labels:
       io.rancher.container.hostname_override: container_name
 
