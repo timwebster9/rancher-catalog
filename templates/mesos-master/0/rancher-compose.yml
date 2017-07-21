@@ -1,6 +1,6 @@
 .catalog:
   name: Mesos Master
-  version: latest
+  version: 1.3.0
   description: |
     Mesos Master
 
