@@ -11,6 +11,7 @@ services:
       MESOS_REGISTRY: in_memory
       MESOS_LOG_DIR: /var/log/mesos
       MESOS_WORK_DIR: /var/tmp/mesos
+    network_mode: "host"
     labels:
       io.rancher.container.pull_image: always
 
