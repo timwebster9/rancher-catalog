@@ -1,0 +1,5 @@
+name: Mesos Slave
+description: |
+  Mesos Slave
+version: "1.3.0"
+category: Orchestration
