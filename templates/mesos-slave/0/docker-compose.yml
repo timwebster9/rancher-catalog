@@ -16,7 +16,7 @@ services:
       MESOS_CONTAINERIZERS: mesos,docker
       MESOS_LOG_DIR: /var/log/mesos
       MESOS_WORK_DIR: /var/tmp/mesos
-      MESOS_IP: 192.168.1.117
+      MESOS_IP: ${slave_ip}
     network_mode: "host"
     privileged: true
     labels:

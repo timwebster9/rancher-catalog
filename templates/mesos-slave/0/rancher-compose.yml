@@ -10,5 +10,11 @@
       description: "The URL of the Mesos master"
       default: "192.168.1.117:5050"
       required: true
+    - variable: "slave_ip"
+      type: "string"
+      label: "Slave IP Address"
+      description: "The IP of the Mesos slave"
+      default: "192.168.1.117"
+      required: true
 
 
