@@ -1,0 +1,8 @@
+.catalog:
+  name: Mesos Master
+  version: latest
+  description: |
+    Mesos Master
+
+
+
