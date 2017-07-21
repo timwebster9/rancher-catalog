@@ -2,4 +2,4 @@ name: Mesos Master
 description: |
   Mesos Master
 version: "latest"
-category: Distributed Computing
+category: Orchestration
