@@ -6,7 +6,6 @@ services:
     volumes:
       - mesos-master:/var/tmp/mesos
     environment:
-      MESOS_HOSTNAME: mars
       MESOS_PORT: 5050
       MESOS_QUORUM: 1
       MESOS_REGISTRY: in_memory
