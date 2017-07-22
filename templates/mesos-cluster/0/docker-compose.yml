@@ -12,7 +12,7 @@ services:
       MESOS_REGISTRY: in_memory
       MESOS_LOG_DIR: /var/log/mesos
       MESOS_WORK_DIR: /var/tmp/mesos/master
-      GLOG_v: 3
+    #  GLOG_v: 3
     labels:
       io.rancher.container.pull_image: always
 
@@ -42,7 +42,7 @@ services:
         - jenkins-data:/var/jenkins_home
       environment:
         JENKINS_SLAVE_AGENT_PORT: 50000
-        GLOV_v: 3
+    #    GLOV_v: 3
       labels:
         io.rancher.container.pull_image: always
 
