@@ -35,10 +35,22 @@ services:
     labels:
       io.rancher.container.pull_image: always
 
+  jenkins:
+      image: localhost:5000/timw/jenkins
+      volumes:
+        - jenkins-data:/var/jenkins_home
+      environment:
+        JENKINS_SLAVE_AGENT_PORT: 50000
+      labels:
+        io.rancher.container.pull_image: always
+
 volumes:
   mesos-master:
     driver: rancher-nfs
     external: true
   mesos-slave-1:
+    driver: rancher-nfs
+    external: true
+  jenkins-data:
     driver: rancher-nfs
     external: true
