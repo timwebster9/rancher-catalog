@@ -23,3 +23,5 @@ services:
     volumes:
       - ${config_dir}:/config
       - ${media_dir}:/data
+    labels:
+      io.rancher.container.pull_image: always
