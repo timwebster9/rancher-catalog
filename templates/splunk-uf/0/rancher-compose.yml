@@ -1,0 +1,5 @@
+.catalog:
+  name: "Splunk Universal Forwarder"
+  version: "0.1"
+  description: "Splunk Universal Forwarder"
+
