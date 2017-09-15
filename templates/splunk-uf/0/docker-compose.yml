@@ -12,8 +12,8 @@ services:
       - splunk-uf-etc:/opt/splunk/etc
       - splunk-uf-var:/opt/splunk/var
       - /var/log/mesos:/mesos-logs
-  labels:
-    io.rancher.scheduler.affinity:host_label: hostname=deimos
+    labels:
+      io.rancher.scheduler.affinity:host_label: hostname=deimos
 
 volumes:
   splunk-uf-etc:
