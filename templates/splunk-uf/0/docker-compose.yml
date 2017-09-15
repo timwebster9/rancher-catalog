@@ -5,7 +5,7 @@ services:
     hostname: splunk
     image: splunk/universalforwarder:6.6.3
     environment:
-      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_START_ARGS: --accept-license --answer-yes
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
       SPLUNK_FORWARD_SERVER: splunk.rancher.zone:9997
