@@ -11,16 +11,16 @@ services:
       SPLUNK_ADD: tcp 1514
       SPLUNK_ADD_1: monitor /mesos-logs
     volumes:
-      - splunk-uf-etc:/opt/splunk/etc
-      - splunk-uf-var:/opt/splunk/var
+#      - splunk-uf-etc:/opt/splunk/etc
+#      - splunk-uf-var:/opt/splunk/var
       - /var/log/mesos:/mesos-logs
     labels:
       io.rancher.scheduler.affinity:host_label: hostname=deimos
 
-volumes:
-  splunk-uf-etc:
-    driver: rancher-nfs
-    external: true
-  splunk-uf-var:
-    driver: rancher-nfs
-    external: true
+#volumes:
+#  splunk-uf-etc:
+#    driver: rancher-nfs
+#    external: true
+#  splunk-uf-var:
+#    driver: rancher-nfs
+#    external: true
