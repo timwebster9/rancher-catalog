@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  splunk:
+    hostname: splunkenterprise
+    image: splunk/splunk:6.5.3-monitor
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - splunk-monitor-etc:/opt/splunk/etc
+      - splunk-monitor-var:/opt/splunk/var
+      - /var/lib/docker/containers:/host/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  splunk-monitor-etc:
+    driver: rancher-nfs
+    external: true
+  splunk-monitor-var:
+    driver: rancher-nfs
+    external: true

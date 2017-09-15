@@ -1,0 +1,5 @@
+.catalog:
+  name: "Splunk (Monitor)"
+  version: "0.1"
+  description: "Splunk Monitor"
+
