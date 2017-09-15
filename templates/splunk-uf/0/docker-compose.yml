@@ -11,7 +11,7 @@ services:
       SPLUNK_ADD: tcp 1514
       SPLUNK_ADD_1: monitor /mesos-logs/master -host deimos -sourcetype mesos-master-logs
       SPLUNK_ADD_2: monitor /mesos-logs/slave -host deimos -sourcetype mesos-slave-logs
-      SPLUNK_ADD_3: monitor /mesos-workdir/slave -host deimos -sourcetype mesos-slave-work
+      SPLUNK_ADD_3: monitor /var/lib/mesos/slave -host deimos -sourcetype mesos-slave-work
 
     volumes:
 #      - splunk-uf-etc:/opt/splunk/etc
