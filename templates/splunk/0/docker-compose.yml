@@ -11,6 +11,8 @@ services:
     volumes:
       - splunk-etc:/opt/splunk/etc
       - splunk-var:/opt/splunk/var
+    ports:
+      - "9997:9997"
 
 volumes:
   splunk-etc:

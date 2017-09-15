@@ -11,10 +11,14 @@ services:
       SPLUNK_ADD: tcp 1514
       SPLUNK_ADD_1: monitor /mesos-logs/master -host deimos -sourcetype mesos-master-logs
       SPLUNK_ADD_2: monitor /mesos-logs/slave -host deimos -sourcetype mesos-slave-logs
+      SPLUNK_ADD_3: monitor /mesos-workdir/slave -host deimos -sourcetype mesos-slave-work
+
     volumes:
 #      - splunk-uf-etc:/opt/splunk/etc
 #      - splunk-uf-var:/opt/splunk/var
       - /var/log/mesos:/mesos-logs
+      - /var/lib/mesos:/mesos-workdir
+
     labels:
       io.rancher.scheduler.affinity:host_label: hostname=deimos
 
