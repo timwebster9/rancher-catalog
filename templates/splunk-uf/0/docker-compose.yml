@@ -9,7 +9,7 @@ services:
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
       SPLUNK_FORWARD_SERVER: splunk.rancher.zone:9997
-      SPLUNK_ADD: monitor /var/mesos-logs
+      SPLUNK_ADD: monitor /mesos-logs
     volumes:
       - splunk-uf-etc:/opt/splunk/etc
       - splunk-uf-var:/opt/splunk/var
