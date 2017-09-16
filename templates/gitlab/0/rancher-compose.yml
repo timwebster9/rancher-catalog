@@ -1,0 +1,4 @@
+.catalog:
+  name: "Gitlab"
+  version: "latest"
+  description: "Gitlab"
