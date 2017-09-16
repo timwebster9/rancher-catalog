@@ -13,6 +13,8 @@ services:
       - splunk-var:/opt/splunk/var
     ports:
       - "9997:9997"
+    labels:
+      io.rancher.scheduler.affinity:host_label: hostname=mars
 
 volumes:
   splunk-etc:
