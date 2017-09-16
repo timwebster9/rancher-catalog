@@ -7,7 +7,7 @@ services:
     command:
       - --loglevel warning
     volumes:
-      - gitlab-redis/redis:/var/lib/redis:Z
+      - gitlab-redis:/var/lib/redis:Z
     labels:
       io.rancher.scheduler.affinity:host_label: hostname=mars
 
