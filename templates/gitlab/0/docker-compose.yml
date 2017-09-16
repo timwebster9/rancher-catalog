@@ -34,7 +34,7 @@ services:
       - "10080:80"
       - "10022:22"
     volumes:
-      - gitlab-data/gitlab:/home/git/data:Z
+      - gitlab-data:/home/git/data:Z
     environment:
       - DEBUG=false
 
