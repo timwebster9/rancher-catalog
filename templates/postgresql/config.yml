@@ -1,0 +1,7 @@
+name: PostgreSQL
+description: |
+  Database Server
+version: latest
+category: Databases
+maintainer: Tim Webster <tim.webster@gmail.com>
+
