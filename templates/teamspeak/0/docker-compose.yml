@@ -11,6 +11,8 @@ services:
     - 41144:41144
     volumes:
     - teamspeak-data:/data
+    labels:
+      io.rancher.scheduler.affinity:host_label: hostname=mars
 
 volumes:
   teamspeak-data:

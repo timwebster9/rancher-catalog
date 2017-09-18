@@ -5,11 +5,13 @@ services:
     restart: always
     image: sameersbn/bind:9.9.5-20170129
     ports:
-    - 53:53/udp
-    - 53:53/tcp
-    - ${webmin_port}:10000
+      - 53:53/udp
+      - 53:53/tcp
+      - ${webmin_port}:10000
     volumes:
-    - bind-data:/data
+      - bind-data:/data
+    labels:
+      io.rancher.scheduler.affinity:host_label: hostname=mars
 
 volumes:
   bind-data:
