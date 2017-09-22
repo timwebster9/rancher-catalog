@@ -1,0 +1,5 @@
+.catalog:
+  name: Redis
+  version: latest
+  description: |
+    Cache Server

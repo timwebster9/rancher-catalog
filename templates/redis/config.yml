@@ -1,0 +1,5 @@
+name: Redis
+description: |
+  Cache Server
+version: latest
+
