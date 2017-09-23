@@ -8,6 +8,10 @@ services:
     command: redis-server --appendonly yes
     volumes:
       - redis-data:/data
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=mars
+
   redis-commander:
     image: tenstartups/redis-commander
     command: --redis-host redis
@@ -15,6 +19,9 @@ services:
       - redis:redis
     ports:
       - "8081:8081"
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=mars
 
 volumes:
   redis-data:
