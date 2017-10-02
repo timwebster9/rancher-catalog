@@ -2,7 +2,7 @@ version: '2'
 
 services:
   squid:
-    image: mars:5000/timw/squid
+    image: neptune:5001/timw/squid
     ports:
       - ${http_port}:3128
     volumes:
