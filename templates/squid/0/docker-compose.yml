@@ -2,7 +2,7 @@ version: '2'
 
 services:
   squid:
-    image: localhost:5000/timw/squid
+    image: mars:5000/timw/squid
     ports:
       - ${http_port}:3128
     volumes:
@@ -10,7 +10,7 @@ services:
     dns: 192.168.1.254
     labels:
       io.rancher.container.pull_image: always
-      io.rancher.scheduler.affinity:host_label: hostname=mars
+      io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
 
 volumes:
   squid-data:

@@ -10,4 +10,10 @@
       required: true
       default: "12080"
       type: "int"
+    - variable: "rancher_host"
+      type: "string"
+      label: "Rancher Host"
+      description: "Rancher host to deploy to"
+      default: "neptune"
+      required: true
 
