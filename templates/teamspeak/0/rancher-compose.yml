@@ -2,5 +2,11 @@
   name: "Teamspeak"
   version: "v1.0"
   description: "Teamspeak"
-  minimum_rancher_version: v0.51.0
+  questions:
+  - variable: "rancher_host"
+    type: "string"
+    label: "Rancher Host"
+    description: "Rancher host to deploy to"
+    default: "neptune"
+    required: true
 

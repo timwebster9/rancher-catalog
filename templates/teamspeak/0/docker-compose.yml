@@ -12,7 +12,7 @@ services:
     volumes:
     - teamspeak-data:/data
     labels:
-      io.rancher.scheduler.affinity:host_label: hostname=mars
+      io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
 
 volumes:
   teamspeak-data:
