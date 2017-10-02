@@ -7,12 +7,13 @@ services:
      - "7071:8081"
      - "18079:18079"
     volumes:
-    - nexus-nfs-volume:/nexus-data
+    - nexus-data:/nexus-data
     labels:
       io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
 
 volumes:
-  nexus-nfs-volume:
+  nexus-data:
     driver: rancher-nfs
     external: true
 
