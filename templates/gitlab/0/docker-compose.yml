@@ -9,7 +9,7 @@ services:
       - "10080:80"
       - "10022:22"
     environment:
-      - GITLAB_OMNIBUS_CONFIG="external_url '${external_url}'
+      - GITLAB_OMNIBUS_CONFIG="external_url '${external_url}'"
     volumes:
       - gitlab-data:/var/opt/gitlab
       - gitlab-config:/etc/gitlab
