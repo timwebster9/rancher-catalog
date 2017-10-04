@@ -2,7 +2,7 @@ version: "2"
 
 services:
   jenkins:
-    image: localhost:5000/timw/jenkins
+    image: mars:5000/timw/jenkins
     volumes:
       - jenkins-data:/var/jenkins_home
     environment:
