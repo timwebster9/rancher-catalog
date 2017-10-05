@@ -15,7 +15,7 @@ services:
       - "9997:9997"
       - "9092:8000"
     labels:
-      io.rancher.scheduler.affinity:host_label: hostname=mars
+      io.rancher.scheduler.affinity:host_label: hostname=neptune
 
 volumes:
   splunk-etc:
