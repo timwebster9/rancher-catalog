@@ -3,7 +3,7 @@ version: '2'
 services:
   splunk:
     hostname: splunk
-    image: splunk/splunk:6.6.3
+    image: splunk/splunk:latest
     environment:
       SPLUNK_START_ARGS: --accept-license --answer-yes
       SPLUNK_ENABLE_LISTEN: 9997
