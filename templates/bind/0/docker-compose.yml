@@ -3,7 +3,7 @@ version: '2'
 services:
   bind:
     restart: always
-    image: sameersbn/bind:9.9.5-20170129
+    image: sameersbn/bind:latest
     ports:
       - 53:53/udp
       - 53:53/tcp
@@ -11,7 +11,7 @@ services:
     volumes:
       - bind-data:/data
     labels:
-      io.rancher.scheduler.affinity:host_label: hostname=mars
+      io.rancher.scheduler.affinity:host_label: hostname=neptune
 
 volumes:
   bind-data:
