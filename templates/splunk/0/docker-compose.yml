@@ -16,6 +16,7 @@ services:
       - "9092:8000"
     labels:
       io.rancher.scheduler.affinity:host_label: hostname=neptune
+      io.rancher.container.pull_image: always
 
 volumes:
   splunk-etc:
