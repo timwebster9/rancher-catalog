@@ -25,4 +25,4 @@ services:
       - ${media_dir}:/data
     labels:
       io.rancher.container.pull_image: always
-      io.rancher.scheduler.affinity:host_label: hostname=mars
+      io.rancher.scheduler.affinity:host_label: hostname=${host_name}
