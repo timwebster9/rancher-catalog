@@ -21,14 +21,14 @@
     - variable: host_ip
       label: "Host IP address"
       type: "string"
-      default: "192.168.1.117"
+      default: "192.168.1.116"
       required: true
       description: |
         IP address of Plex host.
     - variable: host_name
       label: "Host Name"
       type: "string"
-      default: "mars"
+      default: "neptune"
       required: true
       description: |
         Hostname of Plex host.
