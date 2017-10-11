@@ -1,9 +1,9 @@
 swarm-clients:
-  image: "192.168.1.121:18079/timw/jenkins-swarm"
+  image: "neptune:5001/timw/jenkins-swarm"
   user: "${user}"
   labels:
-    io.rancher.scheduler.affinity:host_label_soft: ci=worker
-    io.rancher.container.hostname_override: container_name
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:host_label: hostname=${host_name}
   external_links:
     - "${jenkins_service}:jenkins-primary"
   environment:

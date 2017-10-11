@@ -36,3 +36,9 @@
       required: true
       description: |
         Service that is running Jenkins CI server
+    - variable: host_name
+      label: "Rancher Host"
+      type: "string"
+      required: true
+      description: |
+        Rancher Host
