@@ -40,5 +40,6 @@
       label: "Rancher Host"
       type: "string"
       required: true
+      default: "neptune"
       description: |
         Rancher Host
