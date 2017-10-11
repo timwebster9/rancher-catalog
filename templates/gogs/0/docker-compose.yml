@@ -1,33 +1,15 @@
-version: '2'
+version: "2"
 
 services:
   gogs:
-    image: gogs/gogs:latest
-    ports:
-        - ${http_port}:3000
-        - ${ssh_port}:22
+    image: gogs/gogs
     volumes:
-        - gogs-git-data:/data
-    links:
-        - mysql:db
+      - gogs-data:/data
     labels:
-      io.rancher.scheduler.affinity:host_label: hostname=mars
-
-  mysql:
-    image: mysql:latest
-    ports:
-        - ${public_port}:3306
-    volumes:
-        - gogs-mysql-data:/var/lib/mysql
-    environment:
-        MYSQL_ROOT_PASSWORD: ${mysql_password}
-    labels:
-      io.rancher.scheduler.affinity:host_label: hostname=mars
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=${host_name}
 
 volumes:
-  gogs-git-data:
-    driver: rancher-nfs
-    external: true
-  gogs-mysql-data:
+  gogs-data:
     driver: rancher-nfs
     external: true
