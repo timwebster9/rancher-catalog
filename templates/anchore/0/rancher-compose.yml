@@ -1,0 +1,12 @@
+.catalog:
+  name: "Anchore Engine"
+  version: "latest"
+  description: "Anchore Engine"
+  questions:
+    - variable: host_name
+      description: "Rancher Host"
+      label: "Rancher Host"
+      required: true
+      default: "neptune"
+      type: "string"
+
