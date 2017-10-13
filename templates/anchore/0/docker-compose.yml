@@ -39,7 +39,7 @@ version: '2'
 services:
   anchore-engine:
     #image: "anchore-engine"
-    image: neptune:5001/timw/anchore/anchore-engine:latest
+    image: neptune:5001/timw/anchore-engine:latest
     #privileged: true
     depends_on:
      - anchore-db
