@@ -39,7 +39,7 @@ version: '2'
 services:
   anchore-engine:
     #image: "anchore-engine"
-    image: docker.io/anchore/anchore-engine:latest
+    image: registry.rancher.zone/timw/anchore/anchore-engine:latest
     #privileged: true
     depends_on:
      - anchore-db
