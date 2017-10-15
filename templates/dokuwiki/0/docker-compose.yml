@@ -6,7 +6,7 @@ services:
     volumes:
       - dokuwiki-data:/bitnami
     environment:
-      - DOKUWIKI_WIKI_NAME: The Webster Wiki
+      DOKUWIKI_WIKI_NAME: The Webster Wiki
     ports:
       - "9500:80"
     labels:
