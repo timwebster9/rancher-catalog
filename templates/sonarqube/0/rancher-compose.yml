@@ -11,12 +11,6 @@
       required: true
       default: "9000"
       type: "int"
-    - variable: postgres_data
-      description: "Postgres Data Folder"
-      label: "Postgres Data"
-      required: true
-      default: "/var/lib/postgresql/data/pgdata"
-      type: "string"
     - variable: postgres_db
       description: "Postgres Database"
       label: "Postgres Database"
@@ -47,3 +41,9 @@
       required: false
       default: ""
       type: "string"
+    - variable: rancher_host
+      label: Rancher Host
+      description: Rancher Host
+      required: true
+      default: "neptune"
+      type: string
