@@ -18,7 +18,7 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      PGDATA: ${postgres_data}
+      PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_DB: ${postgres_db}
       POSTGRES_USER: ${postgres_user}
       POSTGRES_PASSWORD: ${postgres_password}
