@@ -7,6 +7,8 @@ services:
       - dokuwiki-data:/bitnami
     environment:
       - DOKUWIKI_WIKI_NAME: The Webster Wiki
+    ports:
+      - "9500:80"
     labels:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
