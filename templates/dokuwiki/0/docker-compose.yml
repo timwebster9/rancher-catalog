@@ -5,6 +5,8 @@ services:
     image: bitnami/dokuwiki:latest
     volumes:
       - dokuwiki-data:/bitnami
+    environment:
+      - DOKUWIKI_WIKI_NAME: The Webster Wiki
     labels:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
