@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  dokuwiki:
+    image: bitnami/dokuwiki:latest
+    volumes:
+      - dokuwiki-data:/bitnami
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
+
+volumes:
+  dokuwiki-data:
+    driver: rancher-nfs

@@ -1,0 +1,12 @@
+.catalog:
+  name: "Dokuwiki"
+  version: "latest"
+  description: "Wiki"
+  questions:
+  - variable: rancher_host
+    description: "Rancher Host"
+    label: "Rancher Host"
+    required: true
+    default: "neptune"
+    type: "string"
+
