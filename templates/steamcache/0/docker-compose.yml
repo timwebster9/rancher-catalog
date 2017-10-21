@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  steamcache:
+    image: steamcache/steamcache:latest
+    volumes:
+      - steamcache-data:/data/cache
+    labels:
+      io.rancher.scheduler.affinity:host_label: hostname=neptune
+      io.rancher.container.pull_image: always
+
+volumes:
+  steamcache-data:
+    driver: rancher-nfs
+    external: true
+
