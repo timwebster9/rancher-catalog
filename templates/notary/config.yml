@@ -1,0 +1,6 @@
+name: Notary
+description: |
+  Docker Trust Service
+version: latest
+category: Security
+

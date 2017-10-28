@@ -1,0 +1,45 @@
+version: "2"
+services:
+  server:
+    image: notary:server-0.5.0
+    ports:
+      - "9060:8080"
+      - "4443:4443"
+    entrypoint: /usr/bin/env sh
+    command: -c "./migrations/migrate.sh && notary-server -config=fixtures/server-config.postgres.json"
+    environment:
+      MIGRATIONS_PATH: migrations/server/postgresql
+      DB_URL: postgres://server@server-db:5432/notaryserver?sslmode=verify-ca&sslrootcert=/go/src/github.com/theupdateframework/notary/fixtures/database/ca.pem&sslcert=/go/src/github.com/theupdateframework/notary/fixtures/database/notary-server.pem&sslkey=/go/src/github.com/theupdateframework/notary/fixtures/database/notary-server-key.pem
+    depends_on:
+      - server-db
+      - signer
+  server-db:
+    image: postgres:9.5.4
+    volumes:
+    #  - ./notarysql/postgresql-initdb.d:/docker-entrypoint-initdb.d
+      - notary-server-data:/var/lib/postgresql
+    command: -l
+
+  signer:
+    image: notary:signer-0.5.0
+    entrypoint: /usr/bin/env sh
+    command: -c "./migrations/migrate.sh && notary-signer -config=fixtures/signer-config.postgres.json"
+    environment:
+      MIGRATIONS_PATH: migrations/signer/postgresql
+      DB_URL: postgres://signer@signer-db:5432/notarysigner?sslmode=verify-ca&sslrootcert=/go/src/github.com/theupdateframework/notary/fixtures/database/ca.pem&sslcert=/go/src/github.com/theupdateframework/notary/fixtures/database/notary-signer.pem&sslkey=/go/src/github.com/theupdateframework/notary/fixtures/database/notary-signer-key.pem
+    depends_on:
+      - signer-db
+  signer-db:
+    image: postgres:9.5.4
+    volumes:
+    #  - ./notarysql/postgresql-initdb.d:/docker-entrypoint-initdb.d
+      - notary-signer-data:/var/lib/postgresql
+    command: -l
+
+volumes:
+  notary-server-data:
+    driver: rancher-nfs
+    external: true
+  notary-signer-data:
+    driver: rancher-nfs
+    external: true

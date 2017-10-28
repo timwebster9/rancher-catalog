@@ -1,0 +1,5 @@
+.catalog:
+  name: Notary
+  version: latest
+  description: |
+    Docker Trust Service
