@@ -24,6 +24,8 @@ services:
 
   signer-db:
     image: registry.rancher.zone/timw/notary-signer-db:latest
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
     volumes:
       - notary-signer-data:/var/lib/mysql
 
