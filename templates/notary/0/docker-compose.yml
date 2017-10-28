@@ -18,10 +18,10 @@ services:
     image: registry.rancher.zone/timw/notary-signer:latest
     command: "-config=/config/signer-config.json"
     environment:
-      NOTARY_SIGNER_PASSWORDALIAS1=mypassword
+      - NOTARY_SIGNER_PASSWORDALIAS1=mypassword
     depends_on:
       - signer-db
-      
+
   signer-db:
     image: registry.rancher.zone/timw/notary-signer-db:latest
     volumes:
