@@ -6,6 +6,8 @@ services:
     depends_on:
       - server-db
       - signer
+    labels:
+      io.rancher.container.pull_image: always
 
   server-db:
     image: registry.rancher.zone/timw/notary-server-db:latest
@@ -13,6 +15,8 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
     volumes:
       - notary-server-data:/var/lib/mysql
+    labels:
+      io.rancher.container.pull_image: always
 
   notarysigner:
     image: registry.rancher.zone/timw/notary-signer:latest
@@ -21,6 +25,8 @@ services:
       - NOTARY_SIGNER_PASSWORDALIAS1=mypassword
     depends_on:
       - signer-db
+    labels:
+      io.rancher.container.pull_image: always
 
   signer-db:
     image: registry.rancher.zone/timw/notary-signer-db:latest
@@ -28,7 +34,9 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
     volumes:
       - notary-signer-data:/var/lib/mysql
-
+    labels:
+      io.rancher.container.pull_image: always
+      
 volumes:
   notary-server-data:
     driver: rancher-nfs
