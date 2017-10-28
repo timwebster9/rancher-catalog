@@ -1,6 +1,6 @@
 version: "2"
 services:
-  server:
+  notaryserver:
     image: registry.rancher.zone/timw/notary-server:latest
     command: "-config=/config/server-config.json"
     depends_on:
@@ -14,7 +14,7 @@ services:
     volumes:
       - notary-server-data:/var/lib/mysql
 
-  signer:
+  notarysigner:
     image: registry.rancher.zone/timw/notary-signer:latest
     command: "-config=/config/signer-config.json"
     environment:
