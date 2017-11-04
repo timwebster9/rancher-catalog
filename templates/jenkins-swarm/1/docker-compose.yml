@@ -13,4 +13,9 @@ swarm-clients:
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
     - '/workspace:/workspace'
+    - 'docker-trust-data:/root/.docker/trust'
 
+volumes:
+ docker-trust-data:
+   driver: rancher-nfs
+   external: true
