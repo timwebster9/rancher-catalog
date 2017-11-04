@@ -16,6 +16,6 @@ swarm-clients:
     - docker-trust-data:/root/.docker/trust
 
 volumes:
- docker-trust-data:
-   driver: rancher-nfs
-   external: true
+  docker-trust-data:
+    driver: rancher-nfs
+    external: true
