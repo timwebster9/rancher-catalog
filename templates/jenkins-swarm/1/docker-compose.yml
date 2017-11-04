@@ -11,9 +11,9 @@ swarm-clients:
     JENKINS_USER: "${jenkins_user}"
     SWARM_EXECUTORS: "${swarm_executors}"
   volumes:
-    - '/var/run/docker.sock:/var/run/docker.sock'
-    - '/workspace:/workspace'
-    - 'docker-trust-data:/root/.docker/trust'
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /workspace:/workspace
+    - docker-trust-data:/root/.docker/trust
 
 volumes:
  docker-trust-data:
