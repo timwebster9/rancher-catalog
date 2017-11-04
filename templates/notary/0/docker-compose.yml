@@ -13,8 +13,8 @@ services:
     image: registry.rancher.zone/timw/notary-server-db:latest
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
-    volumes:
-      - notary-server-data:/var/lib/mysql
+#    volumes:
+#      - notary-server-data:/var/lib/mysql
     labels:
       io.rancher.container.pull_image: always
 
@@ -32,15 +32,15 @@ services:
     image: registry.rancher.zone/timw/notary-signer-db:latest
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
-    volumes:
-      - notary-signer-data:/var/lib/mysql
+#    volumes:
+#      - notary-signer-data:/var/lib/mysql
     labels:
       io.rancher.container.pull_image: always
       
-volumes:
-  notary-server-data:
-    driver: rancher-nfs
-    external: true
-  notary-signer-data:
-    driver: rancher-nfs
-    external: true
+#volumes:
+#  notary-server-data:
+#    driver: rancher-nfs
+#    external: true
+#  notary-signer-data:
+#    driver: rancher-nfs
+#    external: true
