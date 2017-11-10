@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  swarm-agent:
+    image: "repo.rancher.zone/timw/jenkins-swarm-clamav"
+    user: "${user}"
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=${host_name}
+    external_links:
+      - "${jenkins_service}:jenkins-primary"
+    environment:
+      JENKINS_PASS: "${jenkins_pass}"
+      JENKINS_USER: "${jenkins_user}"
+      SWARM_EXECUTORS: "${swarm_executors}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /workspace:/workspace

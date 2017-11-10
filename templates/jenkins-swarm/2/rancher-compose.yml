@@ -1,0 +1,45 @@
+.catalog:
+  name: Jenkins Swarm
+  version: "clamav"
+  description: |
+    Containers that run the slave plugin.
+  questions:
+    - variable: user
+      label: "User to run swarm process"
+      description: |
+        If using the Host Docker, this needs to be root.
+      default: "root"
+      required: true
+      type: "string"
+    - variable: jenkins_user
+      label: "Jenkins username"
+      type: "string"
+      default: "jenkins"
+      required: false
+      description: |
+        Username to authenticate to a secured Jenkins host with.
+    - variable: jenkins_pass
+      label: "Jenkins password"
+      type: "string"
+      default: "jenkins"
+      required: false
+      description: |
+        Password to authenticate to a secured Jenkins host with.
+    - variable: swarm_executors
+      required: false
+      type: "string"
+      description: |
+        Number of executors on the swarm. Default is #cpus
+    - variable: jenkins_service
+      label: "Jenkins Server"
+      type: "service"
+      required: true
+      description: |
+        Service that is running Jenkins CI server
+    - variable: host_name
+      label: "Rancher Host"
+      type: "string"
+      required: true
+      default: "neptune"
+      description: |
+        Rancher Host
