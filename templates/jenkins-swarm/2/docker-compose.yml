@@ -13,6 +13,8 @@ services:
       JENKINS_PASS: "${jenkins_pass}"
       JENKINS_USER: "${jenkins_user}"
       SWARM_EXECUTORS: "${swarm_executors}"
+      LABELS: "${labels}"
+      NODE_NAME: "${node_name}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /workspace:/workspace

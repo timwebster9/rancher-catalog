@@ -43,3 +43,15 @@
       default: "neptune"
       description: |
         Rancher Host
+    - variable: labels
+      label: "Node Labels"
+      type: "string"
+      required: true
+      description: |
+        Whitespace-separated list of labels to be assigned for this node. Multiple options are allowed.
+    - variable: node_name
+      label: "Node Name"
+      type: "string"
+      required: true
+      description: |
+        Name of the node.
