@@ -9,3 +9,10 @@ services:
   #    - 7651:7651
   #    - 7653:7653
   #    - 7659:7659
+    volumes:
+      - oklog-data:/data
+
+volumes:
+  oklog-data:
+    driver: rancher-nfs
+    external: true
