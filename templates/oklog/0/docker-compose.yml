@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  oklog:
+    image: oklog/oklog
+    command: ingeststore -store.segment-replication-factor 1
+  #  ports:
+  #    - 7650:7650
+  #    - 7651:7651
+  #    - 7653:7653
+  #    - 7659:7659

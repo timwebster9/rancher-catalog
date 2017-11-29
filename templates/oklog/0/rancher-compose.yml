@@ -1,0 +1,4 @@
+.catalog:
+  name: OK Log
+  version: latest
+  description: Distributed Log Management System
