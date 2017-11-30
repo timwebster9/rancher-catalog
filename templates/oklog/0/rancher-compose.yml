@@ -3,8 +3,8 @@
   version: latest
   description: Distributed Log Management System
   questions:
-    - variable: container_names
-      description: "Container Names to include"
-      label: "Container Names"
+    - variable: filter_labels
+      description: "Container labels to include"
+      label: "Filter Labels"
       required: true
       type: "string"
