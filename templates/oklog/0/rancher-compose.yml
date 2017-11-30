@@ -4,7 +4,7 @@
   description: Distributed Log Management System
   questions:
     - variable: filter_labels
-      description: "Container labels to include"
+      description: "Container labels to include.  e.g. 'logspout:true'"
       label: "Filter Labels"
       required: true
       type: "string"
