@@ -1,4 +1,9 @@
 .catalog:
-  name: OK Log
+  name: OK Log (with Logspout)
   version: latest
   description: Distributed Log Management System
+  - variable: container_names
+    description: "Container Names to include"
+    label: "container_names"
+    required: true
+    type: "string"

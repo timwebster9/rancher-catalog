@@ -1,6 +1,12 @@
 version: "2"
 
 services:
+  logspout:
+    image: gliderlabs/logspout
+    command: syslog+tcp://oklog:7651?filter.name=${container_names}
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+
   oklog:
     image: oklog/oklog
     command: ingeststore -store.segment-replication-factor 1
