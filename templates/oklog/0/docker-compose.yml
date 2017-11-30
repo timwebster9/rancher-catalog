@@ -4,8 +4,8 @@ services:
   logspout:
     image: gliderlabs/logspout
     command: syslog+tcp://oklog:7651?filter.name=${container_names}
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   oklog:
     image: oklog/oklog
