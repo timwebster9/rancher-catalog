@@ -2,8 +2,9 @@
   name: OK Log (with Logspout)
   version: latest
   description: Distributed Log Management System
+  questions:
   - variable: container_names
     description: "Container Names to include"
-    label: "container_names"
+    label: "Container Names"
     required: true
     type: "string"
