@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+
+  gitlab:
+    restart: always
+    image: neptune:5001/timw/gitlab
+    ports:
+      - "10080:80"
+      - "10022:22"
+    environment:
+      - GITLAB_OMNIBUS_CONFIG="external_url '${external_url}'"
+    volumes:
+      - gitlab-data:/var/opt/gitlab
+      - gitlab-config:/etc/gitlab
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
+
+volumes:
+  gitlab-px-data:
+    driver: pxd
+    driver_opts:
+      repl: '3'
+      size: '5'
+  gitlab-config:
+    driver: pxd
+    driver_opts:
+      repl: '3'
+      size: '5'

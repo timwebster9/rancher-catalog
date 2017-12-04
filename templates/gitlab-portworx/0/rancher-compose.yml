@@ -1,0 +1,17 @@
+.catalog:
+  name: "Gitlab (Portworx)"
+  version: "latest"
+  description: "Gitlab"
+  questions:
+    - variable: external_url
+      label: External URL
+      description: External URL
+      required: true
+      default: "http://neptune:10080"
+      type: string
+    - variable: rancher_host
+      label: Rancher Host
+      description: Rancher Host
+      required: true
+      default: "neptune"
+      type: string
