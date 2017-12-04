@@ -7,11 +7,5 @@
       label: External URL
       description: External URL
       required: true
-      default: "http://neptune:10080"
-      type: string
-    - variable: rancher_host
-      label: Rancher Host
-      description: Rancher Host
-      required: true
-      default: "neptune"
+      default: "http://gitlab-portworx.rancher.zone"
       type: string

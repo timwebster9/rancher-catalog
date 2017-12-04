@@ -15,7 +15,6 @@ services:
       - gitlab-config:/etc/gitlab
     labels:
       io.rancher.container.pull_image: always
-      io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
 
 volumes:
   gitlab-px-data:
