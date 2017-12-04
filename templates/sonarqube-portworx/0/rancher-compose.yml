@@ -41,9 +41,3 @@
       required: false
       default: ""
       type: "string"
-    - variable: rancher_host
-      label: Rancher Host
-      description: Rancher Host
-      required: true
-      default: "neptune"
-      type: string
