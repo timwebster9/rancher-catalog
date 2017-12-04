@@ -4,10 +4,7 @@ services:
 
   gitlab:
     restart: always
-    image: neptune:5001/timw/gitlab
-    ports:
-      - "10080:80"
-      - "10022:22"
+    image: gitlab/gitlab-ce
     environment:
       - GITLAB_OMNIBUS_CONFIG="external_url '${external_url}'"
     volumes:
