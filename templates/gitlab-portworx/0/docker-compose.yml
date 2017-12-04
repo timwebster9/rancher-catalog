@@ -19,7 +19,7 @@ volumes:
     driver_opts:
       repl: '3'
       size: '5'
-  gitlab-config:
+  gitlab-px-config:
     driver: pxd
     driver_opts:
       repl: '3'
