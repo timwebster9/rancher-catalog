@@ -3,20 +3,33 @@ version: "2"
 services:
   logspout:
     image: gliderlabs/logspout:v3.3-dev
-    command: syslog+tcp://oklog:7651?filter.labels=${filter_labels}
+    command: syslog+tcp://${external_hostname}?filter.labels=${filter_labels}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  oklog:
+  oklog-1:
     image: oklog/oklog
-    command: ingeststore -store.segment-replication-factor 1
-  #  ports:
-  #    - 7650:7650
-  #    - 7651:7651
-  #    - 7653:7653
-  #    - 7659:7659
+    command: ingeststore -store.segment-replication-factor 3 -cluster oklog-1 -peer oklog-1 -peer oklog-2 -peer oklog-3
     volumes:
-      - oklog-data:/data
+      - oklog-data-1:/data
+    labels:
+      io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+
+  oklog-2:
+    image: oklog/oklog
+    command: ingeststore -store.segment-replication-factor 3 -cluster oklog-2 -peer oklog-1 -peer oklog-2 -peer oklog-3
+    volumes:
+      - oklog-data-2:/data
+    labels:
+        io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+
+  oklog-3:
+    image: oklog/oklog
+    command: ingeststore -store.segment-replication-factor 3 -cluster oklog-3 -peer oklog-1 -peer oklog-2 -peer oklog-3
+    volumes:
+      - oklog-data-3:/data
+    labels:
+      io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
 
 volumes:
   oklog-data:

@@ -9,3 +9,9 @@
       required: true
       default: "logspout:true"
       type: "string"
+    - variable: external_hostname
+      description: "External Hostname or IP of service (e.g. Load Balancer DN)"
+      label: "External URL"
+      required: true
+      default: "192.168.1.116"
+      type: "string"
