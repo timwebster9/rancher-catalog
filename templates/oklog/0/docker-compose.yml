@@ -11,7 +11,7 @@ services:
     image: oklog/oklog
     command: ingeststore -store.segment-replication-factor 3 -cluster oklog-1 -peer oklog-1 -peer oklog-2 -peer oklog-3
     volumes:
-      - oklog-data-1:/data
+      - oklog-data-px-1:/data
     labels:
       io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
 
@@ -19,7 +19,7 @@ services:
     image: oklog/oklog
     command: ingeststore -store.segment-replication-factor 3 -cluster oklog-2 -peer oklog-1 -peer oklog-2 -peer oklog-3
     volumes:
-      - oklog-data-2:/data
+      - oklog-data-px-2:/data
     labels:
         io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
 
@@ -27,11 +27,23 @@ services:
     image: oklog/oklog
     command: ingeststore -store.segment-replication-factor 3 -cluster oklog-3 -peer oklog-1 -peer oklog-2 -peer oklog-3
     volumes:
-      - oklog-data-3:/data
+      - oklog-data-px-3:/data
     labels:
       io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
 
 volumes:
-  oklog-data:
-    driver: rancher-nfs
-    external: true
+  oklog-data-px-1:
+    driver: pxd
+    driver_opts:
+      repl: '3'
+      size: '5'
+  oklog-data-px-2:
+    driver: pxd
+    driver_opts:
+      repl: '3'
+      size: '5'
+  oklog-data-px-3:
+    driver: pxd
+    driver_opts:
+      repl: '3'
+      size: '5'
