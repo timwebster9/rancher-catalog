@@ -9,7 +9,7 @@ services:
 
   oklog-1:
     image: oklog/oklog
-    command: 'ingeststore -store.segment-replication-factor 3 -cluster oklog-1 -peer oklog-1 -peer oklog-2 -peer oklog-3'
+    command: 'ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-1 -peer oklog-1 -peer oklog-2 -peer oklog-3'
     volumes:
       - oklog-data-px-1:/data
     labels:
@@ -17,7 +17,7 @@ services:
 
   oklog-2:
     image: oklog/oklog
-    command: 'ingeststore -store.segment-replication-factor 3 -cluster oklog-2 -peer oklog-1 -peer oklog-2 -peer oklog-3'
+    command: 'ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-2 -peer oklog-1 -peer oklog-2 -peer oklog-3'
     volumes:
       - oklog-data-px-2:/data
     labels:
@@ -25,7 +25,7 @@ services:
 
   oklog-3:
     image: oklog/oklog
-    command: 'ingeststore -store.segment-replication-factor 3 -cluster oklog-3 -peer oklog-1 -peer oklog-2 -peer oklog-3'
+    command: 'ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-3 -peer oklog-1 -peer oklog-2 -peer oklog-3'
     volumes:
       - oklog-data-px-3:/data
     labels:
