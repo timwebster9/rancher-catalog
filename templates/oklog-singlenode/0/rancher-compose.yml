@@ -1,0 +1,11 @@
+.catalog:
+  name: OK Log (Single Node, with Logspout)
+  version: latest
+  description: Distributed Log Management System
+  questions:
+    - variable: filter_labels
+      description: "Comma-separated list of container labels to include.  Commas must be URL-encoded. e.g. 'logspout:true%2Capplication.stack:true'"
+      label: "Filter Labels"
+      required: true
+      default: "logspout:true"
+      type: "string"
