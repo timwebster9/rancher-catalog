@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  logspout:
+    image: gliderlabs/logspout:v3.3-dev
+    command: syslog+tcp://${external_hostname}?filter.labels=${filter_labels}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      io.rancher.scheduler.global: 'true'
+
+  oklog:
+    image:  registry.rancher.zone/oklog:dev
+    command: '/oklog ingeststore -debug -store.segment-replication-factor 3 -cluster oklog -peer oklog'
+    labels:
+      io.rancher.scheduler.global: 'true'

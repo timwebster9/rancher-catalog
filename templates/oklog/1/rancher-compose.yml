@@ -1,6 +1,6 @@
 .catalog:
   name: OK Log (with Logspout)
-  version: 1
+  version: 2
   description: Distributed Log Management System
   questions:
     - variable: filter_labels
