@@ -6,26 +6,28 @@ services:
     command: syslog+tcp://${external_hostname}?filter.labels=${filter_labels}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      io.rancher.scheduler.global: 'true'
 
   oklog-1:
-    image: oklog/oklog
-    command: 'ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-1 -peer oklog-1 -peer oklog-2 -peer oklog-3'
+    image:  registry.rancher.zone/oklog:dev
+    command: '/oklog ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-1 -peer oklog-1 -peer oklog-2 -peer oklog-3'
     volumes:
       - oklog-data-px-1:/data
     labels:
       io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
 
   oklog-2:
-    image: oklog/oklog
-    command: 'ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-2 -peer oklog-1 -peer oklog-2 -peer oklog-3'
+    image:  registry.rancher.zone/oklog:dev
+    command: '/oklog ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-2 -peer oklog-1 -peer oklog-2 -peer oklog-3'
     volumes:
       - oklog-data-px-2:/data
     labels:
         io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
 
   oklog-3:
-    image: oklog/oklog
-    command: 'ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-3 -peer oklog-1 -peer oklog-2 -peer oklog-3'
+    image:  registry.rancher.zone/oklog:dev
+    command: '/oklog ingeststore -debug -store.segment-replication-factor 3 -cluster oklog-3 -peer oklog-1 -peer oklog-2 -peer oklog-3'
     volumes:
       - oklog-data-px-3:/data
     labels:
