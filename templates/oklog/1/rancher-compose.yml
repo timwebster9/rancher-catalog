@@ -13,5 +13,5 @@
       description: "External Hostname or IP of service (e.g. Load Balancer DN)"
       label: "External URL"
       required: true
-      default: "192.168.1.116"
+      default: "lb.portworx.zone:7651"
       type: "string"
