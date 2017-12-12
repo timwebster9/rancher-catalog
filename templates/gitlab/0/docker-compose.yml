@@ -20,6 +20,4 @@ volumes:
   gitlab-data:
     driver: rancher-nfs
     external: true
-  gitlab-config:
-    driver: rancher-nfs
-    external: true
+
