@@ -7,5 +7,5 @@
       label: External URL
       description: External URL
       required: true
-      default: "http://gitlab-portworx.rancher.zone"
+      default: "http://gitlab.portworx.zone"
       type: string

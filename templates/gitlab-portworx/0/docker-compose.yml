@@ -6,21 +6,12 @@ services:
     restart: always
     image: gitlab/gitlab-ce
     environment:
-      - GITLAB_OMNIBUS_CONFIG="external_url '${external_url}'"
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url '${external_url}'
+        postgresql['shared_buffers'] = "256MB"
+        unicorn['worker_processes'] = 2
     volumes:
-      - gitlab-data:/var/opt/gitlab
-      - gitlab-config:/etc/gitlab
+      - gitlab-px-data:/var/opt/gitlab
     labels:
       io.rancher.container.pull_image: always
 
-volumes:
-  gitlab-px-data:
-    driver: pxd
-    driver_opts:
-      repl: '3'
-      size: '5'
-  gitlab-px-config:
-    driver: pxd
-    driver_opts:
-      repl: '3'
-      size: '5'
