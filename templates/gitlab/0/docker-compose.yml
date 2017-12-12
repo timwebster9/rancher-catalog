@@ -9,6 +9,7 @@ services:
       GITLAB_OMNIBUS_CONFIG: |
         external_url '${external_url}'
         postgresql['shared_buffers'] = "256MB"
+        unicorn['worker_processes'] = 4
     volumes:
       - gitlab-data:/var/opt/gitlab
     labels:
