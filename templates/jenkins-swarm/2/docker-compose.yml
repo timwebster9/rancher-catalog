@@ -2,7 +2,7 @@ version: "2"
 
 services:
   swarm-agent:
-    image: "repo.rancher.zone/timw/jenkins-swarm-clamav"
+    image: "registry.rancher.zone/timw/jenkins-swarm-clamav"
     user: "${user}"
     labels:
       io.rancher.container.pull_image: always

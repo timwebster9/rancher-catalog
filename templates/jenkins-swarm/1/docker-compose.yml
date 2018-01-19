@@ -2,7 +2,7 @@ version: "2"
 
 services:
   swarm-agent:
-    image: "neptune:5001/timw/jenkins-swarm"
+    image: "registry.rancher.zone/timw/jenkins-swarm"
     user: "${user}"
     labels:
       io.rancher.container.pull_image: always
