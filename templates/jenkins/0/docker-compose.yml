@@ -4,7 +4,7 @@ services:
   jenkins:
     image: registry.rancher.zone/timw/jenkins-server
     volumes:
-      - jenkins-data:/var/jenkins_home
+      - jenkins-server-data:/var/jenkins_home
     labels:
       io.rancher.container.pull_image: always
 
