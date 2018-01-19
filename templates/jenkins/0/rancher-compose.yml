@@ -1,18 +1,6 @@
 .catalog:
-  name: Jenkins
+  name: Jenkins Server
   version: latest
   description: |
     Jenkins CI management server.
-  questions:
-  - variable: "jnlp_port"
-    type: "int"
-    label: "JNLP Port"
-    description: "Port for Jenkins slaves to connect"
-    default: 50001
-    required: true
-  - variable: "mesos_host_port"
-    type: "int"
-    label: "Mesos Host Port Number"
-    description: "Port for Mesos to expose on host"
-    default: 9401
-    required: true
+

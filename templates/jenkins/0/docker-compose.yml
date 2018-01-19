@@ -2,22 +2,13 @@ version: "2"
 
 services:
   jenkins:
-    image: mars:5000/timw/jenkins
+    image: registry.rancher.zone/timw/jenkins-server
     volumes:
       - jenkins-data:/var/jenkins_home
-    environment:
-      LIBPROCESS_PORT: 9400
-      LIBPROCESS_ADVERTISE_PORT: ${mesos_host_port}
-      LIBPROCESS_ADVERTISE_IP: 192.168.1.117
-      JENKINS_SLAVE_AGENT_PORT: ${jnlp_port}
-    ports:
-      - ${jnlp_port}:${jnlp_port}
-      - ${mesos_host_port}:9400
     labels:
-      io.rancher.container.hostname_override: container_name
       io.rancher.container.pull_image: always
 
 volumes:
-  jenkins-data:
+  jenkins-server-data:
     driver: rancher-nfs
     external: true
