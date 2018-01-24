@@ -9,3 +9,11 @@ services:
     labels:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
+
+volumes:
+  minio-data:
+    driver: rancher-nfs
+    external: true
+  minio-config:
+    driver: rancher-nfs
+    external: true
