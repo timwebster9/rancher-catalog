@@ -1,0 +1,12 @@
+.catalog:
+  name: Minio
+  version: latest
+  description: |
+    Cloud Storage
+  questions:
+    - variable: "rancher_host"
+      type: "string"
+      label: "Rancher Host"
+      description: "Rancher host to deploy to"
+      default: "neptune"
+      required: true
