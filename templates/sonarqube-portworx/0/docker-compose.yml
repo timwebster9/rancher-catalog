@@ -24,13 +24,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - sonarqube-px-data:/var/lib/postgresql/data/pgdata
+      - px-sonarqube-data:/var/lib/postgresql/data/pgdata
     labels:
       io.rancher.container.pull_image: always
 
-volumes:
-  sonarqube-px-data:
-    driver: pxd
-    driver_opts:
-      repl: '3'
-      size: '5'
