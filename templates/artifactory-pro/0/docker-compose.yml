@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  artifactory:
+    image: docker.bintray.io/jfrog/artifactory-pro:latest
+    volumes:
+      - artifactory-pro-data:/var/opt/jfrog/artifactory
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: hostname=${rancher_host}
+
+volumes:
+  artifactory-pro-data:
+    driver: rancher-nfs
+    external: true
+
