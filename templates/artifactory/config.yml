@@ -1,0 +1,5 @@
+name: Artifactory OSS
+description: |
+    Artifactory
+version: latest
+category: Repository

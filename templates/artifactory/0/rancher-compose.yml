@@ -1,0 +1,11 @@
+.catalog:
+  name: "Artifactory OSS"
+  version: "latest"
+  description: "Artifactory"
+  questions:
+    - variable: rancher_host
+      label: Rancher Host
+      description: Rancher Host
+      required: true
+      default: "neptune"
+      type: string
