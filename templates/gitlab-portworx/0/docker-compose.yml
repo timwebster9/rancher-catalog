@@ -15,3 +15,9 @@ services:
     labels:
       io.rancher.container.pull_image: always
 
+volumes:
+  gitlab-px-data:
+    driver_opts:
+      repl: '3'
+      size: '5'
+      driver: pxd
