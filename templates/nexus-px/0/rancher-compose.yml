@@ -1,0 +1,12 @@
+.catalog:
+  name: Nexus OSS (Portworx)
+  version: latest
+  description: |
+    Repository Manager
+  questions:
+    - variable: "rancher_host"
+      type: "string"
+      label: "Rancher Host"
+      description: "Rancher host to deploy to"
+      default: "neptune"
+      required: true

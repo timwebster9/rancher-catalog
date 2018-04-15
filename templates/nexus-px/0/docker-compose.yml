@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  nexus:
+    image: sonatype/nexus3
+    ports:
+     - "7071:8081"
+     - "18079:18079"
+     - "5001:5001"
+    volumes:
+    - nexus-data:/nexus-data
+    labels:
+      io.rancher.container.pull_image: always
+
+
