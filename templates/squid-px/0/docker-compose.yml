@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  squid:
+    image: neptune:5001/timw/squid
+    ports:
+      - ${http_port}:3128
+    volumes:
+      - squid-data:/data
+    dns: 192.168.1.254
+    labels:
+      io.rancher.container.pull_image: always
+

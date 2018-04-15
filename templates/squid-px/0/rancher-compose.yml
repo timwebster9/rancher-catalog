@@ -1,0 +1,14 @@
+.catalog:
+  name: "Squid (Portworx)"
+  version: "v3.5"
+  description: "Squid"
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: http_port
+      description: "HTTP port to access Squid"
+      label: "Squid HTTP Port"
+      required: true
+      default: "12080"
+      type: "int"
+
+

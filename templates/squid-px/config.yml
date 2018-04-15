@@ -1,0 +1,5 @@
+name: Squid (Portworx)
+description: |
+  Squid Proxy Server
+version: v3.5
+category: Proxies
