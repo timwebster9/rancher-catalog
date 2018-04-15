@@ -3,12 +3,23 @@ version: '2'
 services:
   teamspeak:
     restart: always
-    image: mbentley/teamspeak
+    image: teamspeak:3.1.1
     ports:
     - 9987:9987/udp
     - 30033:30033
     - 10011:10011
-    - 41144:41144
-    volumes:
-    - teamspeak-data:/data
-
+    environment:
+      TS3SERVER_DB_PLUGIN: ts3db_mariadb
+      TS3SERVER_DB_SQLCREATEPATH: create_mariadb
+      TS3SERVER_DB_HOST: db
+      TS3SERVER_DB_USER: root
+      TS3SERVER_DB_PASSWORD: example
+      TS3SERVER_DB_NAME: teamspeak
+      TS3SERVER_DB_WAITUNTILREADY: 30
+      TS3SERVER_LICENSE: accept
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: teamspeak
