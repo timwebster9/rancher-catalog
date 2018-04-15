@@ -2,7 +2,7 @@ version: '2'
 
 services:
   squid:
-    image: 192.168.1.116:5001/timw/squid
+    image: registry.rancher.zone/timw/squid
     ports:
       - ${http_port}:3128
     volumes:
