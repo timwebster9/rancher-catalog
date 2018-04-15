@@ -1,5 +1,5 @@
 .catalog:
-  name: "Bind9"
+  name: "Bind9 (Portworx)"
   version: "1.0"
   description: "Bind Domain Name Server"
   minimum_rancher_version: v0.51.0

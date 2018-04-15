@@ -1,4 +1,4 @@
-name: Bind9
+name: Bind9 (Portworx)
 description: |
   Domain Name Server
 version: v1.0
