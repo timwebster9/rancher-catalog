@@ -1,0 +1,6 @@
+.catalog:
+  name: "Encryptor"
+  version: "latest"
+  description: "Simple password encryptor"
+
+

@@ -1,0 +1,7 @@
+version: "2"
+
+services:
+  encryptor:
+    image: builditdigital/encryptor-api:2.2.0
+    labels:
+      io.rancher.container.pull_image: always
