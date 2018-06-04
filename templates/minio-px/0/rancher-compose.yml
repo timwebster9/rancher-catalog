@@ -1,0 +1,5 @@
+.catalog:
+  name: Minio (Portworx)
+  version: latest
+  description: |
+    Cloud Storage

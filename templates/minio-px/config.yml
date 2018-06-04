@@ -1,0 +1,6 @@
+name: Minio (Portworx)
+description: |
+  Cloud Storage
+version: latest
+category: Storage
+maintainer: Tim Webster <tim.webster@gmail.com>

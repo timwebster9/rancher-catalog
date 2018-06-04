@@ -1,0 +1,10 @@
+version: '2'
+services:
+  minio:
+    image: minio/minio:latest
+    volumes:
+      - minio-data:/data
+      - minio-config:/root/.minio
+    command: server /data
+    labels:
+      io.rancher.container.pull_image: always
